@@ -1,3 +1,4 @@
 # Preview only. Change to Allow when the site is approved to go live.
 User-agent: *
 Disallow: /
+Disallow: /admin/

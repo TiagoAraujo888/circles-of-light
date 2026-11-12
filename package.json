@@ -1,0 +1,14 @@
+{
+  "name": "circles-of-light",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.8",
+    "gray-matter": "4.0.3",
+    "js-yaml": "4.3.2"
+  }
+}
