@@ -1,0 +1,15 @@
+---
+permalink: /reflections.js
+eleventyExcludeFromCollections: true
+---
+(function () {
+  var reflections = {{ col.reflectionTexts | dump | safe }};
+
+  var nodes = document.querySelectorAll("[data-reflection]");
+  if (!nodes.length) return;
+  var pick = reflections[Math.floor(Math.random() * reflections.length)];
+  nodes.forEach(function (el) {
+    var p = el.querySelector("p") || el.appendChild(document.createElement("p"));
+    p.textContent = pick;
+  });
+})();
