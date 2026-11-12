@@ -42,39 +42,30 @@ collections:
           - { label: Browser tab title, name: seo_title, widget: string }
           - { label: Short description, name: meta_description, widget: text }
           - { label: Page address, name: page_path, widget: hidden, default: "/en/" }
-          - { label: "Is this for me? heading", name: for_me_title, widget: string }
-          - { label: "Is this for me? questions", name: for_me_questions, widget: list, allow_add: true }
-          - { label: "Is this for me? closing line", name: for_me_closing, widget: string }
-          - { label: Season heading, name: season_title, widget: string }
-          - { label: Season text, name: season_text, widget: text }
-          - { label: Quiet reflection label, name: reflection_label, widget: string }
-          - { label: Default reflection, name: reflection_default, widget: text, hint: "Shown if JavaScript is off. The rotating reflections are edited under Reflections." }
-          - { label: Invitations heading, name: invites_title, widget: string }
-          - { label: Invitations introduction, name: invites_lede, widget: text }
-          - label: Invitations
-            name: invites
+          - { label: Paths heading, name: paths_title, widget: string }
+          - label: Paths
+            name: paths
             widget: list
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Text, name: text, widget: text }
-              - { label: Wrap links in a paragraph, name: wrap_links, widget: boolean }
-              - label: Links
-                name: links
-                widget: list
-                fields:
-                  - { label: Words, name: label, widget: string }
-                  - { label: Address, name: href, widget: string }
-          - { label: "What's alive heading", name: alive_heading, widget: string }
-          - { label: "What's alive introduction", name: alive_intro, widget: text }
-          - { label: Message label, name: alive_message_label, widget: string }
-          - { label: Name label, name: alive_name_label, widget: string }
-          - { label: Email label, name: alive_email_label, widget: string }
-          - { label: Optional label, name: optional_label, widget: string }
-          - { label: Send button, name: alive_submit, widget: string }
-          - { label: "Email fallback, words before the link", name: alive_fallback_before, widget: string }
-          - { label: Email fallback link, name: alive_fallback_link, widget: string }
-          - { label: "Email fallback, words after the link", name: alive_fallback_after, widget: string }
-          - { label: Email fallback address, name: alive_mailto, widget: string }
+              - { label: Address, name: href, widget: string }
+          - { label: Why circles heading, name: why_title, widget: string }
+          - { label: Why circles paragraphs, name: why_paragraphs, widget: list }
+          - { label: How a circle flows heading, name: flow_title, widget: string }
+          - { label: How a circle flows text, name: flow_text, widget: text }
+          - { label: How a circle flows link words, name: flow_link_label, widget: string }
+          - { label: How a circle flows link address, name: flow_link_href, widget: string }
+          - { label: One-to-one heading, name: one_to_one_title, widget: string }
+          - { label: One-to-one text, name: one_to_one_text, widget: text }
+          - { label: One-to-one link words, name: one_to_one_link_label, widget: string }
+          - { label: One-to-one link address, name: one_to_one_link_href, widget: string }
+          - { label: About heading, name: about_title, widget: string }
+          - { label: About text, name: about_text, widget: text }
+          - { label: About link words, name: about_link_label, widget: string }
+          - { label: About link address, name: about_link_href, widget: string }
+          - { label: Voices heading, name: voices_title, widget: string }
+          - { label: Voices coming-soon line, name: voices_soon, widget: string, hint: "Leave this as a coming-soon line. Do not add sample quotes." }
           - { label: Closing line, name: close, widget: text }
 
       - name: circle
@@ -87,16 +78,22 @@ collections:
           - { label: Page address, name: page_path, widget: hidden, default: "/en/circle.html" }
           - { label: Heading, name: heading, widget: string }
           - { label: Opening paragraphs, name: intro, widget: list }
+          - { label: How a circle flows heading, name: flow_title, widget: string }
+          - { label: How a circle flows steps, name: flow_steps, widget: list }
+          - { label: Duration and care line, name: flow_duration, widget: text }
+          - { label: Camera line, name: flow_camera, widget: text }
           - { label: "What you may notice heading", name: notice_title, widget: string }
           - { label: "What you may notice text", name: notice_text, widget: text }
           - { label: Care line, name: notice_care, widget: text }
           - { label: Before and after heading, name: before_after_title, widget: string }
           - { label: Before heading, name: before_title, widget: string }
           - { label: Before text, name: before_text, widget: text }
-          - { label: During heading, name: during_title, widget: string }
-          - { label: During text, name: during_text, widget: text }
           - { label: After heading, name: after_title, widget: string }
           - { label: After text, name: after_text, widget: text }
+          - { label: How to join heading, name: join_title, widget: string }
+          - { label: How to join text, name: join_text, widget: text }
+          - { label: How to join link words, name: join_link_label, widget: string }
+          - { label: How to join link address, name: join_link_href, widget: string }
           - { label: Question label, name: question_label, widget: string }
           - { label: Question text, name: question_text, widget: text }
           - { label: Closing words before the link, name: close_before, widget: text }
@@ -151,6 +148,23 @@ collections:
           - { label: Closing link words, name: close_link_label, widget: string }
           - { label: Closing link address, name: close_link_href, widget: string }
           - { label: Closing words after the link, name: close_after, widget: string }
+
+      - name: one-to-one
+        label: One-to-one
+        file: content/pages/en/one-to-one.md
+        preview_path: en/one-to-one.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/one-to-one.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Opening paragraphs, name: intro, widget: list }
+          - { label: How to ask heading, name: ask_title, widget: string }
+          - { label: How to ask text, name: ask_text, widget: text }
+          - { label: Contact link words, name: ask_contact_label, widget: string }
+          - { label: Contact link address, name: ask_contact_href, widget: string }
+          - { label: WhatsApp link words, name: ask_whatsapp_label, widget: string }
+          - { label: Care line, name: care_line, widget: text }
 
       - name: questions-page
         label: Questions page
@@ -246,10 +260,8 @@ collections:
       - { label: Opening question, name: pause_question, widget: string, i18n: true }
       - { label: Opening pause, name: pause_cue, widget: text, i18n: true }
       - { label: Small eyebrow line, name: eyebrow, widget: string, i18n: true }
-      - { label: "Headline (first of the three hero lines)", name: headline, widget: string, i18n: true }
-      - { label: "Second hero line", name: subline_1, widget: string, i18n: true }
-      - { label: "Third hero line", name: subline_2, widget: string, i18n: true }
-      - { label: Opening paragraph, name: intro, widget: text, i18n: true }
+      - { label: Headline, name: headline, widget: string, i18n: true }
+      - { label: Opening paragraph, name: intro, widget: text, i18n: true, hint: "One calm line on what a circle is and who it is for." }
 
   - name: questions
     label: Questions
@@ -267,6 +279,8 @@ collections:
       - { label: Order, name: order, widget: number, value_type: int, min: 1, i18n: duplicate, hint: "Lower numbers appear first." }
       - { label: Question, name: question, widget: string, i18n: true }
       - { label: Answer, name: answer, widget: text, i18n: true }
+      - { label: Optional link words, name: link_label, widget: string, required: false, i18n: true }
+      - { label: Optional link address, name: link_href, widget: string, required: false, i18n: duplicate }
 
   - name: reflections
     label: Reflections
@@ -295,7 +309,7 @@ collections:
     identifier_field: title
     fields:
       - { label: Title, name: title, widget: hidden, default: Photos, i18n: duplicate }
-      - label: Home opening photograph
+      - label: Home hero photograph
         name: hero
         widget: object
         i18n: true
@@ -304,8 +318,8 @@ collections:
           - { label: Description for the image, name: alt, widget: string, i18n: true }
           - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
           - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
-      - label: Home closing photograph
-        name: circle_dove
+      - label: Home mid-page photograph
+        name: light_shafts
         widget: object
         i18n: true
         fields:
@@ -314,7 +328,7 @@ collections:
           - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
           - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
       - label: Circle photograph
-        name: circle_cushions
+        name: forest_meadow
         widget: object
         i18n: true
         fields:
@@ -323,7 +337,7 @@ collections:
           - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
           - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
       - label: Pause and Reflect photograph
-        name: pause_candles
+        name: mist_dawn
         widget: object
         i18n: true
         fields:

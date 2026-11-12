@@ -39,21 +39,13 @@ function pagePreview(props) {
 function heroPreview(props) {
   var entry = props.entry;
   return h("div", {},
-    h("section", { className: "pause-screen", "aria-labelledby": "pause-question" },
-      h("div", { className: "breath", "aria-hidden": "true" },
-        h("div", { className: "breath-circle" })
-      ),
-      h("h1", { id: "pause-question", className: "pause-question" }, String(text(entry, "pause_question") || "")),
-      h("p", { className: "pause-cue" }, String(text(entry, "pause_cue") || ""))
-    ),
-    h("section", { className: "headline", "aria-labelledby": "site-headline" },
+    h("section", { className: "hero headline", "aria-labelledby": "site-headline" },
       h("div", { className: "wrap" },
-        h("span", { className: "eyebrow" }, String(text(entry, "eyebrow") || "")),
-        h("h2", { id: "site-headline" }, String(text(entry, "headline") || "")),
-        h("p", { className: "subline" },
-          String(text(entry, "subline_1") || ""),
-          h("span", { className: "line2" }, String(text(entry, "subline_2") || ""))
+        h("div", { className: "breath", "aria-hidden": "true" },
+          h("div", { className: "breath-circle" })
         ),
+        h("span", { className: "eyebrow" }, String(text(entry, "eyebrow") || "")),
+        h("h1", { id: "site-headline" }, String(text(entry, "headline") || "")),
         h("p", {}, String(text(entry, "intro") || ""))
       )
     )
@@ -76,6 +68,7 @@ CMS.registerPreviewTemplate("home", pagePreview);
 CMS.registerPreviewTemplate("circle", pagePreview);
 CMS.registerPreviewTemplate("reflect", pagePreview);
 CMS.registerPreviewTemplate("about", pagePreview);
+CMS.registerPreviewTemplate("one-to-one", pagePreview);
 CMS.registerPreviewTemplate("questions-page", pagePreview);
 CMS.registerPreviewTemplate("contact", pagePreview);
 CMS.registerPreviewTemplate("thanks", pagePreview);
