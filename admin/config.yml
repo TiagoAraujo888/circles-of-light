@@ -1,0 +1,414 @@
+# Circles of Light — content back office (Decap CMS)
+#
+# Planned locales later (not enabled yet):
+# pt, es, fr, de, nl, it, el, no, fi, sv, da, zh, hi, ar (RTL), ru, ja, bn, id, tr, ko
+#
+# Folder collections (Questions, Reflections, Reflection letters, Hero, Photos, Site words)
+# use i18n multiple_folders, so a later locale is stored as content/<collection>/<locale>/.
+# Pages use one file per page (different fields on each page). Those files already live in
+# content/pages/en/. When a language is added, a matching file is added under content/pages/pt/
+# and listed here. File collections cannot use multiple_folders in Decap.
+
+backend:
+  name: github
+  repo: TiagoAraujo888/circles-of-light
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+publish_mode: editorial_workflow
+
+site_url: https://circlesoflight.netlify.app
+display_url: https://circlesoflight.netlify.app
+
+i18n:
+  structure: multiple_folders
+  locales: [en]
+  default_locale: en
+
+media_folder: img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    files:
+      - name: home
+        label: Home
+        file: content/pages/en/home.md
+        preview_path: en/
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/" }
+          - { label: "Is this for me? heading", name: for_me_title, widget: string }
+          - { label: "Is this for me? questions", name: for_me_questions, widget: list, allow_add: true }
+          - { label: "Is this for me? closing line", name: for_me_closing, widget: string }
+          - { label: Season heading, name: season_title, widget: string }
+          - { label: Season text, name: season_text, widget: text }
+          - { label: Quiet reflection label, name: reflection_label, widget: string }
+          - { label: Default reflection, name: reflection_default, widget: text, hint: "Shown if JavaScript is off. The rotating reflections are edited under Reflections." }
+          - { label: Invitations heading, name: invites_title, widget: string }
+          - { label: Invitations introduction, name: invites_lede, widget: text }
+          - label: Invitations
+            name: invites
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Wrap links in a paragraph, name: wrap_links, widget: boolean }
+              - label: Links
+                name: links
+                widget: list
+                fields:
+                  - { label: Words, name: label, widget: string }
+                  - { label: Address, name: href, widget: string }
+          - { label: "What's alive heading", name: alive_heading, widget: string }
+          - { label: "What's alive introduction", name: alive_intro, widget: text }
+          - { label: Message label, name: alive_message_label, widget: string }
+          - { label: Name label, name: alive_name_label, widget: string }
+          - { label: Email label, name: alive_email_label, widget: string }
+          - { label: Optional label, name: optional_label, widget: string }
+          - { label: Send button, name: alive_submit, widget: string }
+          - { label: "Email fallback, words before the link", name: alive_fallback_before, widget: string }
+          - { label: Email fallback link, name: alive_fallback_link, widget: string }
+          - { label: "Email fallback, words after the link", name: alive_fallback_after, widget: string }
+          - { label: Email fallback address, name: alive_mailto, widget: string }
+          - { label: Closing line, name: close, widget: text }
+
+      - name: circle
+        label: What is a Circle
+        file: content/pages/en/circle.md
+        preview_path: en/circle.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/circle.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Opening paragraphs, name: intro, widget: list }
+          - { label: "What you may notice heading", name: notice_title, widget: string }
+          - { label: "What you may notice text", name: notice_text, widget: text }
+          - { label: Care line, name: notice_care, widget: text }
+          - { label: Before and after heading, name: before_after_title, widget: string }
+          - { label: Before heading, name: before_title, widget: string }
+          - { label: Before text, name: before_text, widget: text }
+          - { label: During heading, name: during_title, widget: string }
+          - { label: During text, name: during_text, widget: text }
+          - { label: After heading, name: after_title, widget: string }
+          - { label: After text, name: after_text, widget: text }
+          - { label: Question label, name: question_label, widget: string }
+          - { label: Question text, name: question_text, widget: text }
+          - { label: Closing words before the link, name: close_before, widget: text }
+          - { label: Closing link words, name: close_link_label, widget: string }
+          - { label: Closing link address, name: close_link_href, widget: string }
+
+      - name: reflect
+        label: Pause and Reflect
+        file: content/pages/en/reflect.md
+        preview_path: en/reflect.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/reflect.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Quiet reflection label, name: reflection_label, widget: string }
+          - { label: Default reflection, name: reflection_default, widget: text }
+          - label: Pauses and questions
+            name: pauses
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Paragraphs, name: paragraphs, widget: list }
+          - { label: Centring heading, name: centring_title, widget: string }
+          - { label: Coming soon line, name: centring_coming_soon, widget: text }
+          - { label: Transcript note, name: centring_transcript_note, widget: text }
+          - { label: Centring card link words, name: centring_card_link, widget: string }
+          - { label: Words after the card link, name: centring_card_after, widget: string }
+          - { label: Card address, name: centring_card_href, widget: string }
+          - { label: Audio is ready, name: audio_ready, widget: boolean, hint: "Leave off until the recording is ready. When on, the player appears on the page." }
+          - { label: Audio file, name: audio_src, widget: string }
+          - { label: Transcript heading, name: transcript_summary, widget: string }
+          - { label: Transcript placeholder, name: transcript_placeholder, widget: text }
+          - { label: Closing label, name: closing_label, widget: string }
+          - { label: Closing text, name: closing_text, widget: text }
+
+      - name: about
+        label: About
+        file: content/pages/en/about.md
+        preview_path: en/about.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/about.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Paragraphs, name: paragraphs, widget: list }
+          - { label: Care line, name: care_line, widget: text }
+          - { label: Question label, name: question_label, widget: string }
+          - { label: Question text, name: question_text, widget: text }
+          - { label: Closing words before the link, name: close_before, widget: text }
+          - { label: Closing link words, name: close_link_label, widget: string }
+          - { label: Closing link address, name: close_link_href, widget: string }
+          - { label: Closing words after the link, name: close_after, widget: string }
+
+      - name: questions-page
+        label: Questions page
+        file: content/pages/en/questions.md
+        preview_path: en/questions.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/questions.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Closing words before the link, name: close_before, widget: text }
+          - { label: Closing link words, name: close_link_label, widget: string }
+          - { label: Closing link address, name: close_link_href, widget: string }
+          - { label: Closing words after the link, name: close_after, widget: string }
+
+      - name: contact
+        label: Stay in touch
+        file: content/pages/en/contact.md
+        preview_path: en/contact.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/contact.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: "What's alive heading", name: alive_heading, widget: string }
+          - { label: "What's alive introduction", name: alive_intro, widget: text }
+          - { label: Message label, name: alive_message_label, widget: string }
+          - { label: Name label, name: alive_name_label, widget: string }
+          - { label: Email label, name: alive_email_label, widget: string }
+          - { label: Optional label, name: optional_label, widget: string }
+          - { label: Send button, name: alive_submit, widget: string }
+          - { label: "Email fallback, words before the link", name: alive_fallback_before, widget: string }
+          - { label: Email fallback link, name: alive_fallback_link, widget: string }
+          - { label: "Email fallback, words after the link", name: alive_fallback_after, widget: string }
+          - { label: Email fallback address, name: alive_mailto, widget: string }
+          - { label: Reply-time line, name: reply_time, widget: text }
+          - { label: Direct writing heading, name: direct_title, widget: string }
+          - { label: Email label, name: email_label, widget: string }
+          - { label: WhatsApp label, name: whatsapp_label, widget: string }
+          - { label: Sign-off breath line, name: signoff_breath, widget: text }
+          - { label: Sign-off love line, name: signoff_love, widget: string }
+          - { label: Sign-off name, name: signoff_name, widget: string }
+
+      - name: thanks
+        label: Thank you
+        file: content/pages/en/thanks.md
+        preview_path: en/thanks.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/thanks.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Message, name: message, widget: text }
+          - { label: Pause label, name: pause_label, widget: string }
+          - { label: Pause text, name: pause_text, widget: text }
+          - { label: Return link words, name: return_label, widget: string }
+          - { label: Return link address, name: return_href, widget: string }
+
+      - name: privacy
+        label: Privacy
+        file: content/pages/en/privacy.md
+        preview_path: en/privacy.html
+        fields:
+          - { label: Browser tab title, name: seo_title, widget: string }
+          - { label: Short description, name: meta_description, widget: text }
+          - { label: Page address, name: page_path, widget: hidden, default: "/en/privacy.html" }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: "What I collect heading", name: collect_title, widget: string }
+          - { label: "What I collect text", name: collect_text, widget: text }
+          - { label: "How I use it heading", name: use_title, widget: string }
+          - { label: "How I use it text", name: use_text, widget: text }
+          - { label: "Where it is kept heading", name: kept_title, widget: string }
+          - { label: "Where it is kept text", name: kept_text, widget: text }
+          - { label: "Your choice heading", name: choice_title, widget: string }
+          - { label: Words before the email link, name: choice_before, widget: text }
+          - { label: Words after the email link, name: choice_after, widget: string }
+          - { label: Sign-off, name: signoff, widget: string }
+
+  - name: hero
+    label: Hero
+    label_singular: Hero
+    folder: content/hero
+    extension: yml
+    format: yml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: headline
+    fields:
+      - { label: Opening question, name: pause_question, widget: string, i18n: true }
+      - { label: Opening pause, name: pause_cue, widget: text, i18n: true }
+      - { label: Small eyebrow line, name: eyebrow, widget: string, i18n: true }
+      - { label: "Headline (first of the three hero lines)", name: headline, widget: string, i18n: true }
+      - { label: "Second hero line", name: subline_1, widget: string, i18n: true }
+      - { label: "Third hero line", name: subline_2, widget: string, i18n: true }
+      - { label: Opening paragraph, name: intro, widget: text, i18n: true }
+
+  - name: questions
+    label: Questions
+    label_singular: Question
+    folder: content/questions
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{order}}-{{slug}}"
+    summary: "{{question}}"
+    sortable_fields: ["order", "question"]
+    fields:
+      - { label: Order, name: order, widget: number, value_type: int, min: 1, i18n: duplicate, hint: "Lower numbers appear first." }
+      - { label: Question, name: question, widget: string, i18n: true }
+      - { label: Answer, name: answer, widget: text, i18n: true }
+
+  - name: reflections
+    label: Reflections
+    label_singular: Reflection
+    folder: content/reflections
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{order}}"
+    summary: "{{text}}"
+    sortable_fields: ["order"]
+    fields:
+      - { label: Order, name: order, widget: number, value_type: int, min: 1, i18n: duplicate }
+      - { label: Reflection, name: text, widget: text, i18n: true }
+
+  - name: photos
+    label: Photos
+    folder: content/photos
+    extension: yml
+    format: yml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: title
+    fields:
+      - { label: Title, name: title, widget: hidden, default: Photos, i18n: duplicate }
+      - label: Home opening photograph
+        name: hero
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: Home closing photograph
+        name: circle_dove
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: Circle photograph
+        name: circle_cushions
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: Pause and Reflect photograph
+        name: pause_candles
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: About portrait
+        name: tiago
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: Sharing image
+        name: og
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+
+  - name: site
+    label: Site words
+    folder: content/site
+    extension: yml
+    format: yml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: site_name
+    fields:
+      - { label: Language code, name: html_lang, widget: string, i18n: duplicate }
+      - { label: "Text direction (ltr or rtl)", name: html_dir, widget: string, i18n: duplicate }
+      - { label: Site name, name: site_name, widget: string, i18n: true }
+      - { label: Name, name: site_author, widget: string, i18n: true }
+      - { label: Website address, name: site_url, widget: string, i18n: duplicate }
+      - { label: Home address, name: home_href, widget: string, i18n: duplicate }
+      - { label: Wordmark, name: wordmark, widget: string, i18n: true }
+      - { label: Skip to content, name: skip_link, widget: string, i18n: true }
+      - { label: Menu name (for screen readers), name: nav_label, widget: string, i18n: true }
+      - { label: Language menu name, name: lang_switcher_label, widget: string, i18n: true }
+      - { label: Menu button, name: menu_label, widget: string, i18n: true }
+      - { label: Email, name: email, widget: string, i18n: duplicate }
+      - { label: WhatsApp link, name: whatsapp_url, widget: string, i18n: duplicate }
+      - { label: WhatsApp number as shown, name: whatsapp_display, widget: string, i18n: duplicate }
+      - { label: Privacy page address, name: privacy_href, widget: string, i18n: duplicate }
+      - { label: Privacy link words, name: privacy_label, widget: string, i18n: true }
+      - { label: Thank-you page address, name: thanks_href, widget: string, i18n: duplicate }
+      - label: Menu
+        name: nav
+        widget: list
+        i18n: true
+        fields:
+          - { label: Id, name: id, widget: string }
+          - { label: Words, name: label, widget: string }
+          - { label: Address, name: href, widget: string }
+      - { label: Letter heading, name: footer_letter_title, widget: string, i18n: true }
+      - { label: Letter text, name: footer_letter_text, widget: text, i18n: true }
+      - { label: Letter privacy line, name: footer_letter_privacy, widget: string, i18n: true }
+      - { label: Letter email label, name: footer_email_label, widget: string, i18n: true }
+      - { label: Letter button, name: footer_submit, widget: string, i18n: true }
+      - { label: Complementary care line, name: care_line, widget: text, i18n: true }
+      - { label: Footer name line, name: footer_meta, widget: string, i18n: true }
+      - { label: Hidden field label, name: honeypot_label, widget: string, i18n: true }
+      - { label: Form notification comment, name: form_notifications_comment, widget: hidden, i18n: duplicate }
+
+  - name: letters
+    label: Reflection letters
+    label_singular: Reflection letter
+    folder: content/letters
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{status}}"
+    sortable_fields: ["date", "title", "status"]
+    description: "These letters are kept here as drafts. They are not emailed, and they do not appear on the public website, until that is decided later."
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, i18n: duplicate }
+      - { label: Status, name: status, widget: select, options: ["draft", "ready"], default: draft, i18n: duplicate }
+      - { label: Letter, name: body, widget: markdown, i18n: true }
