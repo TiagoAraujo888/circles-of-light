@@ -14,6 +14,9 @@ permalink: /en/questions.html
           <article>
             <h2>{{ item.question }}</h2>
             <p>{{ item.answer }}</p>
+            {% if item.link_href %}
+            <p><a class="quiet-link" href="{{ item.link_href }}">{{ item.link_label }}</a></p>
+            {% endif %}
           </article>
           {% endfor %}
         </div>

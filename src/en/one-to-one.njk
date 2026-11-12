@@ -1,0 +1,20 @@
+---
+layout: base.njk
+pageKey: one-to-one
+current: one-to-one
+permalink: /en/one-to-one.html
+---
+{% set page = col.pages["one-to-one"] %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        {% for para in page.intro %}
+        <p>{{ para }}</p>
+        {% endfor %}
+        <h2>{{ page.ask_title }}</h2>
+        <p>{{ page.ask_text }}</p>
+        <p><a class="quiet-link" href="{{ page.ask_contact_href }}">{{ page.ask_contact_label }}</a>
+        · <a class="quiet-link" href="{{ col.site.whatsapp_url }}">{{ page.ask_whatsapp_label }}</a></p>
+        <p class="about-care">{{ page.care_line }}</p>
+      </div>
+    </section>

@@ -14,6 +14,17 @@ permalink: /en/circle.html
       </div>
 
       <div class="wrap space-top">
+        <h2>{{ page.flow_title }}</h2>
+        <ol class="flow-steps">
+          {% for step in page.flow_steps %}
+          <li>{{ step }}</li>
+          {% endfor %}
+        </ol>
+        <p>{{ page.flow_duration }}</p>
+        <p>{{ page.flow_camera }}</p>
+      </div>
+
+      <div class="wrap space-top">
         <h2>{{ page.notice_title }}</h2>
         <p>{{ page.notice_text }}</p>
         <p>{{ page.notice_care }}</p>
@@ -23,14 +34,10 @@ permalink: /en/circle.html
         <div class="wrap">
           <h2 id="before-after-title">{{ page.before_after_title }}</h2>
         </div>
-        <div class="ba-grid">
+        <div class="ba-grid ba-grid-two">
           <article class="ba-block">
             <h3>{{ page.before_title }}</h3>
             <p>{{ page.before_text }}</p>
-          </article>
-          <article class="ba-block">
-            <h3>{{ page.during_title }}</h3>
-            <p>{{ page.during_text }}</p>
           </article>
           <article class="ba-block">
             <h3>{{ page.after_title }}</h3>
@@ -39,8 +46,14 @@ permalink: /en/circle.html
         </div>
       </section>
 
-      <figure class="framed-photo space-top">
-        <img src="{{ col.photos.circle_cushions.src }}" width="{{ col.photos.circle_cushions.width }}" height="{{ col.photos.circle_cushions.height }}" alt="{{ col.photos.circle_cushions.alt }}">
+      <div class="wrap space-top">
+        <h2>{{ page.join_title }}</h2>
+        <p>{{ page.join_text }}</p>
+        <p><a class="quiet-link" href="{{ page.join_link_href }}">{{ page.join_link_label }}</a></p>
+      </div>
+
+      <figure class="wide-photo photo-band space-top">
+        <img src="{{ col.photos.forest_meadow.src }}" width="{{ col.photos.forest_meadow.width }}" height="{{ col.photos.forest_meadow.height }}" alt="{{ col.photos.forest_meadow.alt }}">
       </figure>
 
       <aside class="callout">
