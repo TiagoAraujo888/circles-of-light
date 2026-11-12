@@ -23,6 +23,9 @@ nav:
   - id: circle
     label: What is a Circle
     href: /en/circle.html
+  - id: one-to-one
+    label: One-to-one
+    href: /en/one-to-one.html
   - id: reflect
     label: Pause and Reflect
     href: /en/reflect.html
@@ -36,8 +39,8 @@ nav:
     label: Stay in touch
     href: /en/contact.html
 
-footer_letter_title: A reflection letter
-footer_letter_text: A gentle reflection in your inbox every two weeks. No sales, and you can leave anytime.
+footer_letter_title: Letters of Light, every two weeks.
+footer_letter_text: A gentle reflection in your inbox. No sales, and you can leave anytime.
 footer_letter_privacy: Your email is used only to send these letters.
 footer_email_label: Email
 footer_submit: Yes, if you like
