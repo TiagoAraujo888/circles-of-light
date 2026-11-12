@@ -1,0 +1,47 @@
+html_lang: en
+html_dir: ltr
+site_name: Circles of Light
+site_author: Tiago Miguel
+site_url: "https://circlesoflight.netlify.app"
+home_href: /en/
+wordmark: Circles of Light
+skip_link: Skip to content
+nav_label: Primary
+lang_switcher_label: Language
+menu_label: Menu
+email: circles.of.light33@gmail.com
+whatsapp_url: "https://wa.me/351913333210"
+whatsapp_display: "+351 913 333 210"
+privacy_href: /en/privacy.html
+privacy_label: Privacy
+thanks_href: /en/thanks.html
+
+nav:
+  - id: home
+    label: Home
+    href: /en/
+  - id: circle
+    label: What is a Circle
+    href: /en/circle.html
+  - id: reflect
+    label: Pause and Reflect
+    href: /en/reflect.html
+  - id: about
+    label: About
+    href: /en/about.html
+  - id: questions
+    label: Questions
+    href: /en/questions.html
+  - id: contact
+    label: Stay in touch
+    href: /en/contact.html
+
+footer_letter_title: A reflection letter
+footer_letter_text: A gentle reflection in your inbox every two weeks. No sales, and you can leave anytime.
+footer_letter_privacy: Your email is used only to send these letters.
+footer_email_label: Email
+footer_submit: Yes, if you like
+care_line: This is a complementary spiritual practice. It does not replace medical or psychological care.
+footer_meta: Circles of Light · Tiago Miguel
+honeypot_label: Please leave this field empty
+form_notifications_comment: Netlify form notifications must be set to circles.of.light33@gmail.com
