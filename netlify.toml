@@ -5,8 +5,14 @@
   from = "/"
   to = "/en/"
   status = 302
+  force = true
 
 [[redirects]]
   from = "/en"
   to = "/en/"
   status = 302
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
