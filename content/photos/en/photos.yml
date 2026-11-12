@@ -28,3 +28,45 @@ og:
   src: /img/og-share.jpg
   width: 1200
   height: 630
+join_circle:
+  src: /img/circle-chairs-wood.webp
+  alt: Wooden chairs in a circle, with candles and a crystal at the centre.
+  width: 1600
+  height: 1196
+why_circles:
+  src: /img/circle-cushions-dusk.webp
+  alt: Pale cushions and lit candles on a woven rug, evening light at the window.
+  width: 1600
+  height: 1196
+flow:
+  src: /img/circle-chairs-overhead.webp
+  alt: Chairs and candles seen from above, around a small crystal and flame.
+  width: 1600
+  height: 1600
+dove:
+  src: /img/circle-dove.webp
+  alt: People resting in a circle on a terrace, a dove in the sky above, a candle and a crystal at the centre.
+  width: 1600
+  height: 1067
+gallery_title: Together
+gallery:
+  - src: /img/circle-cushions-overhead.webp
+    alt: A circle of pale cushions and candles on a round woven rug.
+    width: 1600
+    height: 1600
+  - src: /img/circle-chairs-white.webp
+    alt: White chairs in a circle around a woven rug, a candle and a crystal at the centre.
+    width: 1600
+    height: 1196
+  - src: /img/circle-cushions-close.webp
+    alt: Cushions and a lit candle, with a crystal at the centre.
+    width: 1600
+    height: 1196
+  - src: /img/circle-terrace.webp
+    alt: Mats laid in a circle on an open terrace, a candle and a crystal at the centre.
+    width: 1600
+    height: 1200
+  - src: /img/circle-chair-linen.webp
+    alt: A single chair on a woven rug, with candles around it.
+    width: 1196
+    height: 1600

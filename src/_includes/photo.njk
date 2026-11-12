@@ -1,0 +1,18 @@
+{# Soft photograph with WebP, a JPG fallback, and an 800px srcset variant. #}
+{% macro soft_photo(photo, className="", lazy=true, sizes="(max-width: 800px) calc(100vw - 2.5rem), 36rem") %}
+{% set base = photo.src | replace(".webp", "") | replace(".jpg", "") %}
+<figure class="soft-photo{{ (' ' + className) if className else '' }}">
+  <picture>
+    <source type="image/webp" srcset="{{ base }}-800.webp 800w, {{ base }}.webp 1600w" sizes="{{ sizes }}">
+    <img
+      src="{{ base }}.jpg"
+      srcset="{{ base }}-800.jpg 800w, {{ base }}.jpg 1600w"
+      sizes="{{ sizes }}"
+      width="{{ photo.width }}"
+      height="{{ photo.height }}"
+      alt="{{ photo.alt }}"
+      {% if lazy %}loading="lazy"{% endif %}
+      decoding="async">
+  </picture>
+</figure>
+{% endmacro %}

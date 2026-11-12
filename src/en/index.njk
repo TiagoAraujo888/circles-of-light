@@ -4,7 +4,9 @@ pageKey: home
 current: home
 permalink: /en/index.html
 ---
+{% from "photo.njk" import soft_photo %}
 {% set page = col.pages.home %}
+{% set join_path = page.paths[0] %}
     <section class="hero headline reveal" aria-labelledby="site-headline">
       <div class="wrap">
         <div class="breath" aria-hidden="true">
@@ -23,37 +25,54 @@ permalink: /en/index.html
     <section class="section paths-block reveal" aria-labelledby="paths-title">
       <div class="wrap">
         <h2 id="paths-title">{{ page.paths_title }}</h2>
-        <div class="invites">
+      </div>
+      <div class="wrap-split path-feature">
+        <article class="invite">
+          <h3><a href="{{ join_path.href }}">{{ join_path.title }}</a></h3>
+          <p>{{ join_path.text }}</p>
+        </article>
+        {{ soft_photo(col.photos.join_circle, "", true, "(max-width: 800px) calc(100vw - 2.5rem), 28rem") }}
+      </div>
+      <div class="wrap-split">
+        <div class="invites invites-rest">
           {% for path in page.paths %}
+          {% if loop.index0 > 0 %}
           <article class="invite">
             <h3><a href="{{ path.href }}">{{ path.title }}</a></h3>
             <p>{{ path.text }}</p>
           </article>
+          {% endif %}
           {% endfor %}
         </div>
       </div>
     </section>
 
     <section class="section why reveal" aria-labelledby="why-title">
-      <div class="wrap">
-        <h2 id="why-title">{{ page.why_title }}</h2>
-        {% for para in page.why_paragraphs %}
-        <p>{{ para }}</p>
-        {% endfor %}
+      <div class="wrap-split split-photo">
+        <div>
+          <h2 id="why-title">{{ page.why_title }}</h2>
+          {% for para in page.why_paragraphs %}
+          <p>{{ para }}</p>
+          {% endfor %}
+        </div>
+        {{ soft_photo(col.photos.why_circles, "", true, "(max-width: 800px) calc(100vw - 2.5rem), 28rem") }}
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="flow-title">
+      <div class="wrap-split split-photo">
+        <div>
+          <h2 id="flow-title">{{ page.flow_title }}</h2>
+          <p>{{ page.flow_text }}</p>
+          <p><a class="quiet-link" href="{{ page.flow_link_href }}">{{ page.flow_link_label }}</a></p>
+        </div>
+        {{ soft_photo(col.photos.flow, "", true, "(max-width: 800px) calc(100vw - 2.5rem), 28rem") }}
       </div>
     </section>
 
     <figure class="wide-photo photo-band reveal">
-      <img src="{{ col.photos.light_shafts.src }}" width="{{ col.photos.light_shafts.width }}" height="{{ col.photos.light_shafts.height }}" alt="{{ col.photos.light_shafts.alt }}">
+      <img src="{{ col.photos.light_shafts.src }}" width="{{ col.photos.light_shafts.width }}" height="{{ col.photos.light_shafts.height }}" alt="{{ col.photos.light_shafts.alt }}" loading="lazy">
     </figure>
-
-    <section class="section reveal" aria-labelledby="flow-title">
-      <div class="wrap">
-        <h2 id="flow-title">{{ page.flow_title }}</h2>
-        <p>{{ page.flow_text }}</p>
-        <p><a class="quiet-link" href="{{ page.flow_link_href }}">{{ page.flow_link_label }}</a></p>
-      </div>
-    </section>
 
     <section class="section reveal" aria-labelledby="home-one-to-one-title">
       <div class="wrap">
@@ -77,6 +96,8 @@ permalink: /en/index.html
         <p class="coming-soon">{{ page.voices_soon }}</p>
       </div>
     </section>
+
+    {{ soft_photo(col.photos.dove, "soft-band reveal", true, "(max-width: 800px) calc(100vw - 2.5rem), 52rem") }}
 
     <div class="wrap reveal">
       <p class="center-note">{{ page.close }}</p>

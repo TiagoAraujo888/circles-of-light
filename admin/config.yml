@@ -362,6 +362,54 @@ collections:
           - { label: Image, name: src, widget: image, i18n: duplicate }
           - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
           - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: Join a circle photograph
+        name: join_circle
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: Why circles photograph
+        name: why_circles
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: How a circle flows photograph
+        name: flow
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - label: Closing photograph
+        name: dove
+        widget: object
+        i18n: true
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
+      - { label: Gallery heading, name: gallery_title, widget: string, required: false, i18n: true, hint: "A one-word or very short heading. Leave empty for no heading." }
+      - label: Gallery
+        name: gallery
+        widget: list
+        required: false
+        i18n: true
+        hint: "A small set of circle photographs. Each photograph should be used only once on the site."
+        fields:
+          - { label: Image, name: src, widget: image, i18n: duplicate }
+          - { label: Description for the image, name: alt, widget: string, i18n: true }
+          - { label: Width, name: width, widget: number, value_type: int, i18n: duplicate }
+          - { label: Height, name: height, widget: number, value_type: int, i18n: duplicate }
 
   - name: site
     label: Site words
