@@ -1,24 +1,24 @@
 title: Photos
 hero:
-  src: /img/hero.jpg
-  alt: A sunlit stone terrace with olive trees and bougainvillea, looking out to the sea, two birds in flight.
-  width: 1920
-  height: 1080
-circle_dove:
-  src: /img/circle-dove.jpg
-  alt: People resting in a circle on a terrace, a dove in the sky above, a candle and a crystal at the centre.
-  width: 1800
-  height: 1200
-circle_cushions:
-  src: /img/circle-cushions.jpg
-  alt: A circle of pale cushions and candles on a round woven rug.
-  width: 1400
-  height: 1400
-pause_candles:
-  src: /img/pause-candles.jpg
-  alt: Cushions and lit candles in a quiet room, evening light at the window.
+  src: /img/hills-sunrise.jpg
+  alt: Hills at sunrise, open grass and soft mist.
   width: 1600
-  height: 1195
+  height: 1067
+light_shafts:
+  src: /img/light-shafts.jpg
+  alt: Wide hills under a quiet sky, with shafts of light.
+  width: 1600
+  height: 869
+forest_meadow:
+  src: /img/forest-meadow.jpg
+  alt: Sunlight through trees at the edge of a meadow of flowers.
+  width: 1600
+  height: 1067
+mist_dawn:
+  src: /img/mist-dawn.jpg
+  alt: A small stand of trees in a sea of cloud, at dawn.
+  width: 1600
+  height: 1065
 tiago:
   src: /img/tiago.jpg
   alt: Tiago Miguel
