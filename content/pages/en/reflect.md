@@ -19,8 +19,8 @@ pauses:
       - You might, if it feels gentle, let that wish open toward Divine Love. Not to become someone else, and not to force a feeling — simply to be received, as you are.
   - label: A gentle check-in
     paragraphs:
-      - As you read, can you notice your body again — the weight of it, the breath moving? If something feels tender, can you meet it honestly, without needing it to change straight away? Growth through love is often quiet, and it can begin with that simple honesty.
-      - Honesty, met with kindness, can be a quiet path toward truth — not a truth you have to prove, but the truth of what is here, in this moment.
+      - As you read, can you notice your body again — the weight of it, the breath moving? If something feels tender, can you meet it honestly, without needing it to change straight away?
+      - Honesty, met with kindness, can be a quiet path toward truth.
 centring_title: A short guided centring
 centring_coming_soon: A short guided centring, in Tiago's voice — coming soon.
 centring_transcript_note: When the recording is ready, a written transcript will sit beside it, so you can read if you prefer not to listen, or if you use a screen reader.
