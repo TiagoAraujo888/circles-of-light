@@ -2,7 +2,7 @@
     <div class="footer-inner">
       {% if show_newsletter !== false %}
       <!-- {{ col.site.form_notifications_comment }} -->
-      <form class="newsletter" name="reflections" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="{{ col.site.thanks_href }}">
+      <form class="newsletter" name="reflections" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="{{ col.site.form_action }}">
         <h2>{{ col.site.footer_letter_title }}</h2>
         <p>{{ col.site.footer_letter_text }}</p>
         <input type="hidden" name="form-name" value="reflections">
