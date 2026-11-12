@@ -61,6 +61,19 @@ Planned languages, in waves: Portuguese, Spanish and French first; then German, 
 
 English currently lives at `/en/`. When translations begin, English can later move to the main address, with other languages in their own folders. That change can wait until you are ready.
 
+
+## Second host (Cloudflare Pages)
+
+The same build can also be published to Cloudflare Pages, as a second, free host, while the site stays hidden from search. In the Cloudflare Pages project settings use:
+
+- Build command: `npm run build`
+- Output directory: `_site`
+- Environment variable: `NODE_VERSION` = `22`
+
+Cloudflare sets `CF_PAGES=1` on its builds. When that is present, the “alive” and “reflections” forms keep the same form names, field names and honeypot, and post to the Netlify site at `https://circlesoflight.netlify.app` (for example `https://circlesoflight.netlify.app/en/thanks.html`), so messages still arrive by the usual form notifications. On Netlify, and when you build on your own computer, the form actions stay as relative addresses, as they do now. There is no JavaScript form submit to keep in step with this; the forms post in the ordinary way.
+
+A `_headers` file adds `X-Robots-Tag: noindex, nofollow` on every path. A `_redirects` file sends `/` to `/en/` and `/en` to `/en/`, as a temporary 302. On Cloudflare, those redirects are followed even if a file is also present, so the small “Continue to Circles of Light” page at the bare address does not block the redirect. That page is still there as a gentle fallback if someone opens the files without the redirects.
+
 ## A few things this back office does not change
 
 These stay in the website's code, so they are not edited from `/admin`:

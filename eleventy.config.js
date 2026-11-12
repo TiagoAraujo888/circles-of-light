@@ -6,7 +6,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("languages.js");
   eleventyConfig.addPassthroughCopy("language-switcher.js");
+  eleventyConfig.addPassthroughCopy("fade.js");
   eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("_headers");
+  eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("admin");
 

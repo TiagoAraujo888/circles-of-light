@@ -5,7 +5,7 @@ current: home
 permalink: /en/index.html
 ---
 {% set page = col.pages.home %}
-    <section class="hero headline" aria-labelledby="site-headline">
+    <section class="hero headline reveal" aria-labelledby="site-headline">
       <div class="wrap">
         <div class="breath" aria-hidden="true">
           <div class="breath-circle"></div>
@@ -16,11 +16,11 @@ permalink: /en/index.html
       </div>
     </section>
 
-    <figure class="wide-photo photo-band">
+    <figure class="wide-photo photo-band reveal">
       <img src="{{ col.photos.hero.src }}" width="{{ col.photos.hero.width }}" height="{{ col.photos.hero.height }}" alt="{{ col.photos.hero.alt }}">
     </figure>
 
-    <section class="section" aria-labelledby="paths-title">
+    <section class="section paths-block reveal" aria-labelledby="paths-title">
       <div class="wrap">
         <h2 id="paths-title">{{ page.paths_title }}</h2>
         <div class="invites">
@@ -34,7 +34,7 @@ permalink: /en/index.html
       </div>
     </section>
 
-    <section class="section" aria-labelledby="why-title">
+    <section class="section why reveal" aria-labelledby="why-title">
       <div class="wrap">
         <h2 id="why-title">{{ page.why_title }}</h2>
         {% for para in page.why_paragraphs %}
@@ -43,11 +43,11 @@ permalink: /en/index.html
       </div>
     </section>
 
-    <figure class="wide-photo photo-band">
+    <figure class="wide-photo photo-band reveal">
       <img src="{{ col.photos.light_shafts.src }}" width="{{ col.photos.light_shafts.width }}" height="{{ col.photos.light_shafts.height }}" alt="{{ col.photos.light_shafts.alt }}">
     </figure>
 
-    <section class="section" aria-labelledby="flow-title">
+    <section class="section reveal" aria-labelledby="flow-title">
       <div class="wrap">
         <h2 id="flow-title">{{ page.flow_title }}</h2>
         <p>{{ page.flow_text }}</p>
@@ -55,7 +55,7 @@ permalink: /en/index.html
       </div>
     </section>
 
-    <section class="section" aria-labelledby="home-one-to-one-title">
+    <section class="section reveal" aria-labelledby="home-one-to-one-title">
       <div class="wrap">
         <h2 id="home-one-to-one-title">{{ page.one_to_one_title }}</h2>
         <p>{{ page.one_to_one_text }}</p>
@@ -63,7 +63,7 @@ permalink: /en/index.html
       </div>
     </section>
 
-    <section class="section" aria-labelledby="home-about-title">
+    <section class="section reveal" aria-labelledby="home-about-title">
       <div class="wrap">
         <h2 id="home-about-title">{{ page.about_title }}</h2>
         <p>{{ page.about_text }}</p>
@@ -71,13 +71,13 @@ permalink: /en/index.html
       </div>
     </section>
 
-    <section class="section voices-soon" aria-labelledby="voices-title">
+    <section class="section voices-soon reveal" aria-labelledby="voices-title">
       <div class="wrap">
         <h2 id="voices-title">{{ page.voices_title }}</h2>
         <p class="coming-soon">{{ page.voices_soon }}</p>
       </div>
     </section>
 
-    <div class="wrap">
+    <div class="wrap reveal">
       <p class="center-note">{{ page.close }}</p>
     </div>

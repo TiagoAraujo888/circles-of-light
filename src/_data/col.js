@@ -49,6 +49,16 @@ function loadYamlDirSingle(rel) {
 
 const pages = Object.fromEntries(loadMdDir(`pages/${locale}`).map((page) => [page.slug, page]));
 
+const site = loadYaml(`site/${locale}/site.yml`);
+const thanksPath = site.thanks_href || "/en/thanks.html";
+const formHost = String(site.site_url || "https://circlesoflight.netlify.app").replace(/\/$/, "");
+// On Cloudflare Pages, Netlify Forms are not available, so the forms post
+// absolutely to the Netlify site. On Netlify (and local) builds the action stays relative.
+site.form_action =
+  process.env.CF_PAGES === "1" && !/^https?:\/\//i.test(thanksPath)
+    ? formHost + thanksPath
+    : thanksPath;
+
 export default {
   locale,
   pages,
@@ -57,5 +67,5 @@ export default {
   reflections: loadMdDir(`reflections/${locale}`),
   reflectionTexts: loadMdDir(`reflections/${locale}`).map((item) => item.text),
   photos: loadYaml(`photos/${locale}/photos.yml`),
-  site: loadYaml(`site/${locale}/site.yml`),
+  site,
 };

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F7F1E6">
+  <meta name="theme-color" content="#F8F0E8">
   <meta name="robots" content="noindex, nofollow">
   <title>{{ pageData.seo_title }}</title>
   <meta name="description" content="{{ pageData.meta_description }}">
@@ -22,6 +22,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="skip-link" href="#content">{{ col.site.skip_link }}</a>
@@ -35,5 +36,6 @@
   {% if include_reflections !== false %}
   <script src="/reflections.js" defer></script>
   {% endif %}
+  <script src="/fade.js" defer></script>
 </body>
 </html>
