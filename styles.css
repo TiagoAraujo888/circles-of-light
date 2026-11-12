@@ -910,3 +910,71 @@ textarea:hover {
 :lang(ru) {
   font-family: "Source Sans 3", "Noto Sans", "Segoe UI", "Tahoma", sans-serif;
 }
+
+/* ----- Home hero: breath sits softly above the headline ----- */
+.hero {
+  text-align: center;
+  padding: 3.25rem 0 2.75rem;
+}
+
+.hero .breath {
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: 0 auto 1.4rem;
+}
+
+.hero .breath-circle {
+  width: 5.75rem;
+  height: 5.75rem;
+}
+
+.hero h1 {
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+.invite h3 a {
+  color: inherit;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 var(--gold);
+}
+
+.invite h3 a:hover {
+  color: var(--link);
+}
+
+/* ----- How a circle flows ----- */
+.flow-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+}
+
+.flow-steps li {
+  margin: 0 0 0.85rem;
+  padding: 0.15rem 0 0.15rem 1.15rem;
+  border-inline-start: 2px solid var(--gold);
+  color: var(--ink-soft);
+}
+
+/* Two-column before and after */
+@media (min-width: 880px) {
+  .ba-grid-two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ----- Voices slot (empty until real voices exist) ----- */
+.voices-soon {
+  text-align: center;
+}
+
+.voices-soon .coming-soon {
+  margin: 0;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+.photo-band {
+  margin-block: 0.25rem 0.5rem;
+}
