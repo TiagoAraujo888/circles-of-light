@@ -5,14 +5,14 @@ current: contact
 permalink: /en/contact.html
 ---
 {% set page = col.pages.contact %}
-    <section class="section">
+    <section class="section reveal">
       <div class="wrap">
         <h1>{{ page.heading }}</h1>
         <p>{{ page.intro }}</p>
       </div>
     </section>
 
-      <section class="section" id="alive" aria-labelledby="contact-alive-heading">
+      <section class="section reveal" id="alive" aria-labelledby="contact-alive-heading">
         <div class="alive-box">
           <h2 id="contact-alive-heading">{{ page.alive_heading }}</h2>
           <p class="form-intro">{{ page.alive_intro }}</p>
@@ -23,7 +23,7 @@ permalink: /en/contact.html
         </div>
       </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section reveal" style="padding-top:0">
       <div class="wrap">
         <h2>{{ page.direct_title }}</h2>
         <p>{{ page.email_label }} <a href="mailto:{{ col.site.email }}">{{ col.site.email }}</a><br>
