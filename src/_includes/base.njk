@@ -1,0 +1,39 @@
+{% set pageData = col.pages[pageKey] %}
+<!DOCTYPE html>
+<html lang="{{ col.site.html_lang }}" dir="{{ col.site.html_dir }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F7F1E6">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ pageData.seo_title }}</title>
+  <meta name="description" content="{{ pageData.meta_description }}">
+  <meta property="og:title" content="{{ pageData.seo_title }}">
+  <meta property="og:description" content="{{ pageData.meta_description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ col.site.site_url }}{{ col.photos.og.src }}">
+  <meta property="og:image:width" content="{{ col.photos.og.width }}">
+  <meta property="og:image:height" content="{{ col.photos.og.height }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ col.site.site_url }}{{ col.photos.og.src }}">
+  <link rel="alternate" hreflang="en" href="{{ col.site.site_url }}{{ pageData.page_path }}">
+  <link rel="alternate" hreflang="x-default" href="{{ col.site.site_url }}{{ pageData.page_path }}">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">{{ col.site.skip_link }}</a>
+  {% include "header.njk" %}
+  <main id="content">
+    {{ content | safe }}
+  </main>
+  {% include "footer.njk" %}
+  <script src="/languages.js" defer></script>
+  <script src="/language-switcher.js" defer></script>
+  {% if include_reflections !== false %}
+  <script src="/reflections.js" defer></script>
+  {% endif %}
+</body>
+</html>

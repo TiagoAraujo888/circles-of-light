@@ -1,0 +1,29 @@
+  <footer class="site-footer">
+    <div class="footer-inner">
+      {% if show_newsletter !== false %}
+      <!-- {{ col.site.form_notifications_comment }} -->
+      <form class="newsletter" name="reflections" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="{{ col.site.thanks_href }}">
+        <h2>{{ col.site.footer_letter_title }}</h2>
+        <p>{{ col.site.footer_letter_text }}</p>
+        <input type="hidden" name="form-name" value="reflections">
+        <p class="honeypot">
+          <label>{{ col.site.honeypot_label }} <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <div class="newsletter-row">
+          <div class="field">
+            <label for="reflections-email">{{ col.site.footer_email_label }}</label>
+            <input type="email" id="reflections-email" name="email" autocomplete="email" required>
+          </div>
+          <button class="btn" type="submit">{{ col.site.footer_submit }}</button>
+        </div>
+        <p class="form-fallback">{{ col.site.footer_letter_privacy }} <a href="{{ col.site.privacy_href }}">{{ col.site.privacy_label }}</a></p>
+      </form>
+      {% endif %}
+      <p class="care-line">{{ col.site.care_line }}</p>
+      <p class="footer-meta">{{ col.site.footer_meta }}<br>
+        <a href="mailto:{{ col.site.email }}">{{ col.site.email }}</a>
+        · <a href="{{ col.site.whatsapp_url }}">{{ col.site.whatsapp_display }}</a>
+        · <a href="{{ col.site.privacy_href }}">{{ col.site.privacy_label }}</a>
+      </p>
+    </div>
+  </footer>

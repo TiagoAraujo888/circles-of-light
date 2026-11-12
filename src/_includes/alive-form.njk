@@ -1,0 +1,21 @@
+        <!-- {{ col.site.form_notifications_comment }} -->
+        <form class="alive-form" name="alive" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="{{ col.site.thanks_href }}">
+          <input type="hidden" name="form-name" value="alive">
+          <p class="honeypot">
+            <label>{{ col.site.honeypot_label }} <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+          <div class="field">
+            <label for="{{ formPrefix }}-alive-message">{{ formPage.alive_message_label }}</label>
+            <textarea id="{{ formPrefix }}-alive-message" name="message" required></textarea>
+          </div>
+          <div class="field">
+            <label for="{{ formPrefix }}-alive-name">{{ formPage.alive_name_label }} <span class="optional">{{ formPage.optional_label }}</span></label>
+            <input type="text" id="{{ formPrefix }}-alive-name" name="name" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="{{ formPrefix }}-alive-email">{{ formPage.alive_email_label }} <span class="optional">{{ formPage.optional_label }}</span></label>
+            <input type="email" id="{{ formPrefix }}-alive-email" name="email" autocomplete="email">
+          </div>
+          <button class="btn" type="submit">{{ formPage.alive_submit }}</button>
+        </form>
+        <p class="form-fallback">{{ formPage.alive_fallback_before }}<a href="{{ formPage.alive_mailto }}">{{ formPage.alive_fallback_link }}</a>{{ formPage.alive_fallback_after }}</p>

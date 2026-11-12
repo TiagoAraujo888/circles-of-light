@@ -1,0 +1,21 @@
+  <header class="site-header">
+    <a class="wordmark" href="{{ col.site.home_href }}">{{ col.site.wordmark }}</a>
+    <nav class="nav-desktop" aria-label="{{ col.site.nav_label }}">
+      {% for item in col.site.nav %}
+      <a href="{{ item.href }}"{% if item.id == current %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+    <div class="header-tools">
+      <nav class="lang-switcher" data-lang-switcher aria-label="{{ col.site.lang_switcher_label }}">
+        <a href="{{ pageData.page_path }}" lang="en" hreflang="en" aria-current="true">English</a>
+      </nav>
+      <details class="nav-mobile">
+        <summary>{{ col.site.menu_label }}</summary>
+      <nav aria-label="{{ col.site.nav_label }}">
+        {% for item in col.site.nav %}
+        <a href="{{ item.href }}"{% if item.id == current %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+    </details>
+    </div>
+  </header>
