@@ -1,0 +1,26 @@
+---
+layout: base.njk
+pageKey: about
+current: about
+permalink: /en/about.html
+---
+{% set page = col.pages.about %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        <figure class="portrait">
+          <img src="{{ col.photos.tiago.src }}" width="{{ col.photos.tiago.width }}" height="{{ col.photos.tiago.height }}" alt="{{ col.photos.tiago.alt }}">
+        </figure>
+        {% for para in page.paragraphs %}
+        <p>{{ para }}</p>
+        {% endfor %}
+        <p class="about-care">{{ page.care_line }}</p>
+      </div>
+      <aside class="callout">
+        <span class="label">{{ page.question_label }}</span>
+        <p>{{ page.question_text }}</p>
+      </aside>
+      <div class="wrap">
+        <p class="center-note">{{ page.close_before }} <a href="{{ page.close_link_href }}">{{ page.close_link_label }}</a>{{ page.close_after }}</p>
+      </div>
+    </section>

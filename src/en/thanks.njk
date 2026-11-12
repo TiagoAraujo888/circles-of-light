@@ -1,0 +1,20 @@
+---
+layout: base.njk
+pageKey: thanks
+current: ""
+permalink: /en/thanks.html
+show_newsletter: false
+include_reflections: false
+---
+{% set page = col.pages.thanks %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        <p>{{ page.message }}</p>
+        <aside class="callout">
+          <span class="label">{{ page.pause_label }}</span>
+          <p>{{ page.pause_text }}</p>
+        </aside>
+        <p class="center-note"><a href="{{ page.return_href }}">{{ page.return_label }}</a></p>
+      </div>
+    </section>

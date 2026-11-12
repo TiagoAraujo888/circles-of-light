@@ -1,0 +1,36 @@
+---
+layout: base.njk
+pageKey: contact
+current: contact
+permalink: /en/contact.html
+---
+{% set page = col.pages.contact %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        <p>{{ page.intro }}</p>
+      </div>
+    </section>
+
+      <section class="section" id="alive" aria-labelledby="contact-alive-heading">
+        <div class="alive-box">
+          <h2 id="contact-alive-heading">{{ page.alive_heading }}</h2>
+          <p class="form-intro">{{ page.alive_intro }}</p>
+          {% set formPrefix = "contact" %}
+          {% set formPage = page %}
+          {% include "alive-form.njk" %}
+        <p>{{ page.reply_time }}</p>
+        </div>
+      </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <h2>{{ page.direct_title }}</h2>
+        <p>{{ page.email_label }} <a href="mailto:{{ col.site.email }}">{{ col.site.email }}</a><br>
+        {{ page.whatsapp_label }} <a href="{{ col.site.whatsapp_url }}">{{ col.site.whatsapp_display }}</a></p>
+        <div class="signoff">
+          <p>{{ page.signoff_breath }}</p>
+          <p>{{ page.signoff_love }}<br>{{ page.signoff_name }}</p>
+        </div>
+      </div>
+    </section>

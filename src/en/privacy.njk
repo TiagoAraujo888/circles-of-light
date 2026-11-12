@@ -1,0 +1,22 @@
+---
+layout: base.njk
+pageKey: privacy
+current: ""
+permalink: /en/privacy.html
+---
+{% set page = col.pages.privacy %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        <p>{{ page.intro }}</p>
+        <h2>{{ page.collect_title }}</h2>
+        <p>{{ page.collect_text }}</p>
+        <h2>{{ page.use_title }}</h2>
+        <p>{{ page.use_text }}</p>
+        <h2>{{ page.kept_title }}</h2>
+        <p>{{ page.kept_text }}</p>
+        <h2>{{ page.choice_title }}</h2>
+        <p>{{ page.choice_before }}<a href="mailto:{{ col.site.email }}">{{ col.site.email }}</a>{{ page.choice_after }}</p>
+        <p class="signoff">{{ page.signoff }}</p>
+      </div>
+    </section>

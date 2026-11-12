@@ -1,0 +1,91 @@
+---
+layout: base.njk
+pageKey: home
+current: home
+permalink: /en/index.html
+---
+{% set page = col.pages.home %}
+    <section class="pause-screen" aria-labelledby="pause-question">
+      <div class="breath" aria-hidden="true">
+        <div class="breath-circle"></div>
+      </div>
+      <h1 id="pause-question" class="pause-question">{{ col.hero.pause_question }}</h1>
+      <p class="pause-cue">{{ col.hero.pause_cue }}</p>
+    </section>
+
+    <section class="headline" aria-labelledby="site-headline">
+      <div class="wrap">
+        <span class="eyebrow">{{ col.hero.eyebrow }}</span>
+        <h2 id="site-headline">{{ col.hero.headline }}</h2>
+        <p class="subline">{{ col.hero.subline_1 }}<span class="line2">{{ col.hero.subline_2 }}</span></p>
+        <p>{{ col.hero.intro }}</p>
+      </div>
+    </section>
+
+    <figure class="wide-photo photo-band">
+      <img src="{{ col.photos.hero.src }}" width="{{ col.photos.hero.width }}" height="{{ col.photos.hero.height }}" alt="{{ col.photos.hero.alt }}">
+    </figure>
+
+    <section class="section for-me" id="for-me" aria-labelledby="for-me-title">
+      <div class="wrap">
+        <h2 id="for-me-title">{{ page.for_me_title }}</h2>
+        <ul class="quiet-questions">
+          {% for item in page.for_me_questions %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <p class="soft-line">{{ page.for_me_closing }}</p>
+      </div>
+    </section>
+
+    <section class="section season" id="every-season" aria-labelledby="every-season-title">
+      <div class="wrap">
+        <h2 id="every-season-title">{{ page.season_title }}</h2>
+        <p>{{ page.season_text }}</p>
+      </div>
+    </section>
+
+    <div class="callout reflection" data-reflection>
+      <span class="label">{{ page.reflection_label }}</span>
+      <p>{{ page.reflection_default }}</p>
+    </div>
+
+    <section class="section" aria-labelledby="wander">
+      <div class="wrap">
+        <h2 id="wander">{{ page.invites_title }}</h2>
+        <p class="lede">{{ page.invites_lede }}</p>
+        <div class="invites">
+          {% for invite in page.invites %}
+          <article class="invite">
+            <h3>{{ invite.title }}</h3>
+            <p>{{ invite.text }}</p>
+            {% for link in invite.links %}
+            {% if invite.wrap_links %}
+            <p><a class="quiet-link" href="{{ link.href }}">{{ link.label }}</a></p>
+            {% else %}
+            <a class="quiet-link" href="{{ link.href }}">{{ link.label }}</a>
+            {% endif %}
+            {% endfor %}
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+      <section class="section" id="alive" aria-labelledby="home-alive-heading">
+        <div class="alive-box">
+          <h2 id="home-alive-heading">{{ page.alive_heading }}</h2>
+          <p class="form-intro">{{ page.alive_intro }}</p>
+          {% set formPrefix = "home" %}
+          {% set formPage = page %}
+          {% include "alive-form.njk" %}
+        </div>
+      </section>
+
+    <figure class="wide-photo photo-after">
+      <img src="{{ col.photos.circle_dove.src }}" width="{{ col.photos.circle_dove.width }}" height="{{ col.photos.circle_dove.height }}" alt="{{ col.photos.circle_dove.alt }}">
+    </figure>
+
+    <div class="wrap">
+      <p class="center-note">{{ page.close }}</p>
+    </div>

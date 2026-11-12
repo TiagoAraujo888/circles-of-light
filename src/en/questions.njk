@@ -1,0 +1,22 @@
+---
+layout: base.njk
+pageKey: questions
+current: questions
+permalink: /en/questions.html
+---
+{% set page = col.pages.questions %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        <p>{{ page.intro }}</p>
+        <div class="faq">
+          {% for item in col.questions %}
+          <article>
+            <h2>{{ item.question }}</h2>
+            <p>{{ item.answer }}</p>
+          </article>
+          {% endfor %}
+        </div>
+        <p class="center-note">{{ page.close_before }} <a href="{{ page.close_link_href }}">{{ page.close_link_label }}</a>{{ page.close_after }}</p>
+      </div>
+    </section>

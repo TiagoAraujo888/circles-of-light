@@ -1,0 +1,54 @@
+---
+layout: base.njk
+pageKey: circle
+current: circle
+permalink: /en/circle.html
+---
+{% set page = col.pages.circle %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        {% for para in page.intro %}
+        <p>{{ para }}</p>
+        {% endfor %}
+      </div>
+
+      <div class="wrap space-top">
+        <h2>{{ page.notice_title }}</h2>
+        <p>{{ page.notice_text }}</p>
+        <p>{{ page.notice_care }}</p>
+      </div>
+
+      <section class="ba-section" id="before-after" aria-labelledby="before-after-title">
+        <div class="wrap">
+          <h2 id="before-after-title">{{ page.before_after_title }}</h2>
+        </div>
+        <div class="ba-grid">
+          <article class="ba-block">
+            <h3>{{ page.before_title }}</h3>
+            <p>{{ page.before_text }}</p>
+          </article>
+          <article class="ba-block">
+            <h3>{{ page.during_title }}</h3>
+            <p>{{ page.during_text }}</p>
+          </article>
+          <article class="ba-block">
+            <h3>{{ page.after_title }}</h3>
+            <p>{{ page.after_text }}</p>
+          </article>
+        </div>
+      </section>
+
+      <figure class="framed-photo space-top">
+        <img src="{{ col.photos.circle_cushions.src }}" width="{{ col.photos.circle_cushions.width }}" height="{{ col.photos.circle_cushions.height }}" alt="{{ col.photos.circle_cushions.alt }}">
+      </figure>
+
+      <aside class="callout">
+        <span class="label">{{ page.question_label }}</span>
+        <p>{{ page.question_text }}</p>
+      </aside>
+
+      <div class="wrap">
+        <p class="center-note">{{ page.close_before }} <a href="{{ page.close_link_href }}">{{ page.close_link_label }}</a>.</p>
+      </div>
+    </section>

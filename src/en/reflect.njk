@@ -1,0 +1,60 @@
+---
+layout: base.njk
+pageKey: reflect
+current: reflect
+permalink: /en/reflect.html
+---
+{% set page = col.pages.reflect %}
+    <section class="section">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+        <p>{{ page.intro }}</p>
+      </div>
+
+      <aside class="callout reflection" data-reflection>
+        <span class="label">{{ page.reflection_label }}</span>
+        <p>{{ page.reflection_default }}</p>
+      </aside>
+
+      {% for pause in page.pauses %}
+      <aside class="callout">
+        <span class="label">{{ pause.label }}</span>
+        {% for para in pause.paragraphs %}
+        <p>{{ para }}</p>
+        {% endfor %}
+      </aside>
+      {% endfor %}
+
+      <figure class="framed-photo">
+        <img src="{{ col.photos.pause_candles.src }}" width="{{ col.photos.pause_candles.width }}" height="{{ col.photos.pause_candles.height }}" alt="{{ col.photos.pause_candles.alt }}">
+      </figure>
+
+      <aside class="audio-card" id="centring">
+        <h2>{{ page.centring_title }}</h2>
+        <p>{{ page.centring_coming_soon }}</p>
+        <p>{{ page.centring_transcript_note }}</p>
+        <p><a href="{{ page.centring_card_href }}">{{ page.centring_card_link }}</a>{{ page.centring_card_after }}</p>
+        {% if page.audio_ready %}
+        <audio controls preload="none">
+          <source src="{{ page.audio_src }}" type="audio/mpeg">
+        </audio>
+        {% else %}
+        <!--
+        <audio controls preload="none">
+          <source src="{{ page.audio_src }}" type="audio/mpeg">
+        </audio>
+        -->
+        {% endif %}
+        <details class="transcript">
+          <summary>{{ page.transcript_summary }}</summary>
+          <p>{{ page.transcript_placeholder }}</p>
+        </details>
+      </aside>
+
+      <div class="wrap">
+        <aside class="callout">
+          <span class="label">{{ page.closing_label }}</span>
+          <p>{{ page.closing_text }}</p>
+        </aside>
+      </div>
+    </section>
