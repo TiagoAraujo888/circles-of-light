@@ -4,6 +4,7 @@ pageKey: circle
 current: circle
 permalink: /en/circle.html
 ---
+{% from "photo.njk" import soft_photo %}
 {% set page = col.pages.circle %}
     <section class="section reveal">
       <div class="wrap">
@@ -52,9 +53,20 @@ permalink: /en/circle.html
         <p><a class="quiet-link" href="{{ page.join_link_href }}">{{ page.join_link_label }}</a></p>
       </div>
 
-      <figure class="wide-photo photo-band space-top">
-        <img src="{{ col.photos.forest_meadow.src }}" width="{{ col.photos.forest_meadow.width }}" height="{{ col.photos.forest_meadow.height }}" alt="{{ col.photos.forest_meadow.alt }}">
-      </figure>
+      {% if col.photos.gallery and col.photos.gallery.length %}
+      <div class="gallery-block space-top">
+        {% if col.photos.gallery_title %}
+        <div class="wrap">
+          <h2 class="gallery-heading">{{ col.photos.gallery_title }}</h2>
+        </div>
+        {% endif %}
+        <div class="photo-gallery">
+          {% for item in col.photos.gallery %}
+          {{ soft_photo(item, "", true, "(max-width: 640px) calc(100vw - 2.5rem), 28rem") }}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
 
       <aside class="callout">
         <span class="label">{{ page.question_label }}</span>
